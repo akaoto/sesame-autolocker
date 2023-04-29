@@ -100,7 +100,7 @@ class SesameCmd:
 
 
 class Sesame(SesameStatus, SesameHistory, SesameCmd):
-    def __init__(self, uuid, apiKey, secretKey, history,):
+    def __init__(self, uuid, apiKey, secretKey, history):
         super().__init__()
         self._rootUrl = f'https://app.candyhouse.co/api/sesame2/{uuid}'
         self._apiKey = apiKey
