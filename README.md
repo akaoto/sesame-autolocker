@@ -1,0 +1,2 @@
+# sesame-autolocker
+SwitchBot開閉センサーとセサミによるオートロック
