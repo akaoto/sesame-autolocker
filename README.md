@@ -38,7 +38,7 @@
 ## インストール
 
 ```
-sudo apt-get install python-pip libglib2.0-dev
+sudo apt install python-pip libglib2.0-dev
 git clone git@github.com:akaoto/sesame-autolocker.git
 cd sesame-autolocker
 pip3 install -r requirementss.txt
