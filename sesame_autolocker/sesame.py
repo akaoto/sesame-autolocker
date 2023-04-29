@@ -59,7 +59,7 @@ class SesameHistory:
             histories = self.getHistories(page, lg)
             for history in histories:
                 if history['type'] in lockEvents:
-                    return True
+                    return False
                 elif history['type'] == self.HISTORY_MANUAL_UNLOCKED:
                     return True
                 elif history['type'] in unlockEventsBySesame:
