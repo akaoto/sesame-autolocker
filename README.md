@@ -29,8 +29,6 @@
 - セサミの操作履歴から解錠方法を取得することにより実現しています。
 - 手動解錠時、ネットワーク遅延などが発生した場合には誤検知して問答無用で締め出されてしまいます。
 
-(そもそも [セサミタッチ](https://jp.candyhouse.co/products/sesame-touch) の発売時、晴れて不要な機能となることでしょう!)
-
 ## 動作確認環境
 
 - Raspberry Pi3 Model B (Raspberry Pi OS Lite 11)
