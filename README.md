@@ -39,7 +39,7 @@
 
 ```
 sudo apt install python-pip libglib2.0-dev
-git clone git@github.com:akaoto/sesame-autolocker.git
+git clone https://github.com/akaoto/sesame-autolocker.git
 cd sesame-autolocker
 pip3 install -r requirementss.txt
 cp config/config.yml.sample config/config.yml
