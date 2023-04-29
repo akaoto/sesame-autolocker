@@ -1,0 +1,9 @@
+sesame_autolocker:
+    lockout_prevention_mode: False
+contact_sensor:
+    address: 01:23:45:67:89:1A
+sesame:
+    uuid: 01234567-89AB-CDEF-GHIJ-KLMNOPQRSTUV
+    api_key: your_api_key
+    secret_key: your_secret_key
+    history: sesame_autolocker
