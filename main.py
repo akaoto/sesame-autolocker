@@ -9,8 +9,8 @@ from sesame_autolocker.contact_sensor import ContactSensor
 logging.basicConfig(
     filename="log/debug.log",
     level=logging.DEBUG,
-    format="[%(levelname)s] %(message)s",
-    datefmt="%m/%d/%Y %I:%M:%S %p"
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y/%m/%d %H:%M:%S"
 )
 
 
