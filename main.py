@@ -3,8 +3,7 @@
 import asyncio
 import logging
 import yaml
-from sesame_autolocker.sesame import Sesame
-from sesame_autolocker.contact_sensor import ContactSensor
+from sesame_autolocker import ContactSensor, Sesame
 
 logging.basicConfig(
     filename="log/debug.log",
