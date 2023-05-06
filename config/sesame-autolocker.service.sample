@@ -1,0 +1,12 @@
+[Unit]
+Description = Autolock by Sesame with SwithBot's contact sensor
+After = dbus-org.bluez.service
+
+[Service]
+Type = simple
+WorkingDirectory = /opt/sesame-autolocker
+ExecStart = /opt/sesame-autolocker/main.py
+Restart = always
+
+[Install]
+WantedBy = multi-user.target

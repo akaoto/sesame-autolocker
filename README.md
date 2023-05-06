@@ -38,18 +38,20 @@
 ## インストール
 
 ```
-sudo apt install python-pip libglib2.0-dev
+apt install python-pip libglib2.0-dev
 git clone https://github.com/akaoto/sesame-autolocker.git
 cd sesame-autolocker
 pip3 install -r requirementss.txt
 cp config/config.yml.sample config/config.yml
+cp config/sesame-autolocker.service.sample /etc/systemd/system/service/sesame-autolocker.service
 ```
 
-`config/config.yml` を適宜設定してください。
+`config.yml` や `sesame-autolocker.service` を適宜設定してください。
 閉め出し防止機能の有効化のほか、開閉センサーのBDアドレスやセサミのUUID、APIキー、シークレットキーの設定が必要です。
 
-## 起動
+設定後、サービスを有効化および起動してください。
 
 ```
-./main.py
+systemctl enable sesame-autolocker
+systemctl start hello
 ```
