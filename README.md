@@ -28,6 +28,10 @@
 *<注意>*
 - セサミの操作履歴から解錠方法を取得することにより実現しています。
 - 手動解錠時、ネットワーク遅延などが発生した場合には誤検知して問答無用で締め出されてしまいます。
+- ここで言う手動解錠に、SwitchBot開閉センサーのボタン押下による解錠は*含みません*。
+   - 自動解錠していることを直感的に認識して閉め出しの可能性に気づくはずなのでよしとしました。
+   - とはいえ鍵やスマートフォンを持たずに解錠できてしまうので注意です。
+   - 妙案検討中。
 
 ## 動作確認環境
 
@@ -41,7 +45,7 @@
 apt install python-pip libglib2.0-dev
 git clone https://github.com/akaoto/sesame-autolocker.git
 cd sesame-autolocker
-pip3 install -r requirementss.txt
+pip3 install -r requirements.txt
 cp config/config.yml.sample config/config.yml
 cp config/sesame-autolocker.service.sample /etc/systemd/system/service/sesame-autolocker.service
 ```
@@ -53,5 +57,5 @@ cp config/sesame-autolocker.service.sample /etc/systemd/system/service/sesame-au
 
 ```
 systemctl enable sesame-autolocker
-systemctl start hello
+systemctl start sesame-autolocker
 ```
