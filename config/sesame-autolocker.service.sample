@@ -6,7 +6,8 @@ After = dbus-org.bluez.service
 Type = simple
 WorkingDirectory = /opt/sesame-autolocker
 ExecStart = /opt/sesame-autolocker/main.py
-Restart = always
+ExecStopPost =
+Restart = no
 
 [Install]
 WantedBy = multi-user.target
