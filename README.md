@@ -47,7 +47,7 @@ git clone https://github.com/akaoto/sesame-autolocker.git
 cd sesame-autolocker
 pip3 install -r requirements.txt
 cp config/config.yml.sample config/config.yml
-cp config/sesame-autolocker.service.sample /etc/systemd/system/service/sesame-autolocker.service
+cp config/sesame-autolocker.service.sample /etc/systemd/system/sesame-autolocker.service
 ```
 
 `config.yml` や `sesame-autolocker.service` を適宜設定してください。
