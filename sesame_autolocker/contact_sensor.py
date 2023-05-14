@@ -11,9 +11,9 @@ class ServiceData:
 
 class ContactSensorDelegate(btle.DefaultDelegate):
     def __init__(self, address):
-        btle.DefaultDelegate.__init__(self)
+        super().__init__()
         self._address = address
-        self.serviceData = ServiceData()
+        self.serviceData = None
 
     def handleDiscovery(self, dev, isNewDev, isNewData):
         if dev.addr != self._address.lower():
@@ -32,7 +32,8 @@ class ContactSensor:
     def __init__(self, address):
         delegate = ContactSensorDelegate(address)
         self._scanner = btle.Scanner().withDelegate(delegate)
-        self._scanner.scan(1)
+        while not self._scanner.delegate.serviceData:
+            self._scanner.scan(1)
 
     def onDoorStateChange(self, doorState):
         pass
