@@ -27,9 +27,6 @@ class AutoLocker(ContactSensor):
             config['sesame']['history']
         )
 
-    def onButtonPushCounter(self, buttonPushCounter):
-        self._sesame.unlock()
-
     def onDoorStateChange(self, doorState):
         if doorState == self.DOOR_STATE_CLOSE:
             if self._autolockPreventionMode and self._sesame.isManualUnlocked():
