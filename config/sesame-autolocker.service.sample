@@ -1,14 +1,13 @@
 [Unit]
-Description = Autolock by Sesame with SwithBot's contact sensor
-After = bluetooth.service
+Description=Autolock by Sesame with SwithBot's contact sensor
+After=bluetooth.service
 
 [Service]
-Type = simple
-WorkingDirectory = /opt/sesame-autolocker
-ExecStartPost =
-ExecStart = /opt/sesame-autolocker/main.py
-ExecStopPost =
-Restart = always
+Type=simple
+ExecStartPre=
+ExecStart=bash -lc sesame_autolocker.py
+ExecStopPost=
+Restart=always
 
 [Install]
-WantedBy = multi-user.target
+WantedBy=multi-user.target

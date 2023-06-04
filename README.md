@@ -41,12 +41,17 @@
 ## インストール
 
 ```
-apt install libglib2.0-dev
+cd /home/pi
 git clone https://github.com/akaoto/sesame-autolocker.git
+
 cd sesame-autolocker
-pip3 install -r requirements.txt
-cp config/config.yml.sample config/config.yml
-cp config/sesame-autolocker.service.sample /etc/systemd/system/sesame-autolocker.service
+sudo pip3 install -r requirements.txt
+
+cd config
+cp config.yml.sample config.yml
+sudo cp sesame-autolocker.service.sample /etc/systemd/system/sesame-autolocker.service
+
+sudo bash -c 'echo export PATH=\$PATH:/home/pi/sesame-autolocker >> /etc/profile'
 ```
 
 `config.yml` や `sesame-autolocker.service` を適宜設定してください。

@@ -3,19 +3,20 @@
 import asyncio
 import logging
 import yaml
+from pathlib import Path
 from sesame_autolocker import ContactSensor, Sesame
 
 logging.basicConfig(
-    filename="log/debug.log",
+    filename=Path(__file__).parent / 'log/debug.log',
     level=logging.DEBUG,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    datefmt="%Y/%m/%d %H:%M:%S"
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    datefmt='%Y/%m/%d %H:%M:%S'
 )
 
 
 class AutoLocker(ContactSensor):
     def __init__(self):
-        with open('config/config.yml') as f:
+        with open(Path(__file__).parent / 'config/config.yml') as f:
             config = yaml.safe_load(f)
 
         super().__init__(config['contact_sensor']['address'])
