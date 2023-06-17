@@ -63,3 +63,12 @@ sudo bash -c 'echo export PATH=\$PATH:/home/pi/sesame-autolocker >> /etc/profile
 systemctl enable sesame-autolocker
 systemctl start sesame-autolocker
 ```
+
+Raspberry PIではBluetoothが使えなくなることがあり再起動するまで復旧しないようです。
+`monitor.sh` はサービス状態が停止している場合に再起動させるためのスクリプトです。
+cronで定期実行する場合には `sudo crontab -e` で下記を設定してください。
+これは5分毎に実行する場合の例です。
+
+```
+*/5 * * * * /home/pi/sesame-autolocker/monitor.sh
+```
