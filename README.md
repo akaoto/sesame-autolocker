@@ -45,6 +45,7 @@ cd /home/pi
 git clone https://github.com/akaoto/sesame-autolocker.git
 
 cd sesame-autolocker
+sudo apt install python3-pip libglib2.0-dev -y
 sudo pip3 install -r requirements.txt
 
 cd config
@@ -60,8 +61,8 @@ sudo bash -c 'echo export PATH=\$PATH:/home/pi/sesame-autolocker >> /etc/profile
 設定後、サービスを有効化および起動してください。
 
 ```
-systemctl enable sesame-autolocker
-systemctl start sesame-autolocker
+sudo systemctl enable sesame-autolocker
+sudo systemctl start sesame-autolocker
 ```
 
 Raspberry PIではBluetoothが使えなくなることがあり再起動するまで復旧しないようです。
@@ -71,4 +72,10 @@ cronで定期実行する場合には `sudo crontab -e` で下記を設定して
 
 ```
 */5 * * * * /home/pi/sesame-autolocker/monitor.sh
+```
+
+また、Raspberry PIはリードオンリー化しておくとよいかもしれません。
+
+```
+sudo raspi-config nonint enable_overlayfs
 ```
