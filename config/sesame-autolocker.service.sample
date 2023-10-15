@@ -7,7 +7,7 @@ Type=simple
 ExecStartPre=
 ExecStart=bash -lc sesame_autolocker.py
 ExecStopPost=
-Restart=always
+Restart=
 
 [Install]
 WantedBy=multi-user.target
